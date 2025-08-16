@@ -12,28 +12,32 @@ et des données issues d'autres institutions financières.
 ```
 OC_projet_7/
 │
-├── README.md                        # Documentation générale du projet  
-├── requirements.txt                 # Package Python nécessaire au déploiement de l'API 
-├── .gitignore                       # Fichiers à ignorer si Git est utilisé 
+├── README.md                         # Documentation générale du projet
+├── requirements.txt                  # Liste des dépendances Python nécessaires
+├── .gitignore                        # Liste des fichiers et dossiers à ignorer par Git
+├── Procfile                          # Fichier de configuration pour le déploiement 
+├── .python-version                   # Version de Python utilisée 
 │
-├── .github/workflows       
-│   ├── deployed.yml/                # Workflow de déploiement de l'API 
-│   ├── test.yml/                    # Workflow de test de l'API 
+├── .github/workflows/                # Définition des workflows GitHub Actions 
+│   ├── deployed.yml                  # Workflow de déploiement automatique de l’API
+│   └── test.yml                      # Workflow de tests automatisés 
 │
-├── Data/                             # Données 
-│   ├── App_test_final.csv/           # Table de caractéristiques client utilisée dans la modélisation  
-│   └── pipeline_to_deployed.joblib/  # Pipeline de modélisation entrainée   
+├── Data/                             # Données et modèles sauvegardés
+│   ├── App_test_final.csv            # Jeu de données client test pour l'API
+│   └── pipeline_to_deployed.joblib   # Pipeline de machine learning pré entraîné
 │
-├── notebooks/                        # Notebooks d'exploration et de modélisation
+├── notebooks/                        # Notebooks d’exploration, d’analyse et de modélisation
 │
-├── API/                              # Code source principal
-│   ├── __init__.py
-│   ├── app.py/                       # Code de l'API
+├── API/                              # Code source de l’API
+│   ├── __init__.py                   # Fichier d’initialisation 
+│   └── app.py                        # Script principal de l’API
 │
-├── Test/                 
-    ├── __init__.py
-    ├── test_api.py/                  # Tests unitaires et d'intégration
-
+└── Test/                             # Scripts de test
+    ├── __init__.py                   # Fichier d’initialisation 
+    └── test_api.py                   # Tests unitaires de l’API
 
 ```
+**Lien vers l'API** 
+
+https://api-oc-p7-4c6d536f5afd.herokuapp.com/
 
