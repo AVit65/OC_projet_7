@@ -1,0 +1,1 @@
+web: gunicorn API.api:app -k uvicorn.workers.UvicornWorker --log-level debug
