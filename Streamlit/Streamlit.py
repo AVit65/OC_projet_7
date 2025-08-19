@@ -29,9 +29,9 @@ if st.button("Prédire"):
         try:
             # Appel API
             url = os.getenv("API_URL", "http://localhost:8001/predict")
-            clientid = {"client_id": int(clientid)}
-            response = requests.post(url, json=clientid)
-
+            payload = {"client_id": int(client_id)}
+            response = requests.post(url, json=payload)
+            
             if response.status_code == 200:
                 result = response.json()
 

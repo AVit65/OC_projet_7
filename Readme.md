@@ -57,6 +57,6 @@ Les tables de données brutes listées ci-dessous et utilisées dans les noteboo
 
 **Lien vers le dashboard et vers l'API** 
 
-- API: https://api-oc-p7.onrender.com/docs#/  
-- Dashboard : https://oc-p7-cu77.onrender.com/
+- API: https://api-oc-p7-4c6d536f5afd.herokuapp.com/docs  
+- Dashboard : https://streamlit-oc-p7-heroku.onrender.com 
 
