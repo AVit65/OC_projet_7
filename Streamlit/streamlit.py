@@ -35,30 +35,31 @@ if st.button("Prédire"):
             if response.status_code == 200:
                 result = response.json()
 
-                # Vérifier si l'API renvoie une erreur pour ce client
+                # Gestion du cas où l'API renverrait une erreur
                 if "error" in result:
                     st.error(result["error"])
                 else:
                     proba = result["proba"]
                     st.write("Probabilité de défaut :", round(proba, 2))
-                    st.write("Le risque de défaut de paiment est élevée" if result["prediction"] == 1 else "Le risque de défaut de paiment est faible")
+                    st.write("Le client a été classé comme mauvais payeur" if result["prediction"] == 1 else "Le client a été classé comme bon payeur")
 
-                    # === Ajout de la jauge ===
+                    # Ajout de la jauge
                     fig = go.Figure(go.Indicator(
                         mode = "gauge+number",
-                        value = proba * 100,  # pourcentage
+                        value = proba * 100,  
+                        number = {'suffix': "%"}
                         title = {'text': "Risque (%)"},
                         gauge = {
                             'axis': {'range': [0, 100]},
                             'bar': {'color': "darkred" if proba > 0.5 else "black"},
                             'steps': [
-                                {'range': [0, 45], 'color': "Gold"},
-                                {'range': [45, 100], 'color': "DarkSlateBlue"}
+                                {'range': [0, 53], 'color': "Gold"},
+                                {'range': [53, 100], 'color': "DarkSlateBlue"}
                             ],
                             'threshold': {
                                 'line': {'color': "black", 'width': 4},
                                 'thickness': 0.8,
-                                'value': 45 
+                                'value': 53 
                             }
                         }
                     ))
